@@ -3,8 +3,8 @@ import './App.css'
 // import Header from './components/Header'
 import Search from './components/Search'
 // import SearchHistory from './components/SearchHistory'
-// import HourlyList from './components/HourlyList'
-import DailyList from './components/DailyList'
+import HourlyList from './components/HourlyList'
+// import DailyList from './components/DailyList'
 // import Today from './components/Today'
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
       <Search />
       {/* <Today /> */}
       {/* <SearchHistory /> */}
-      {/* <HourlyList /> */}
-      <DailyList />
+      <HourlyList />
+      {/* <DailyList /> */}
     </div>
   )
 }
