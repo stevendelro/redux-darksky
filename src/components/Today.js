@@ -3,15 +3,15 @@ import { connect } from 'react-redux'
 
 class Today extends React.Component {
   render() {
-    const { currently, daily, noData } = this.props.weather
+    const { currently, daily, noData, displayedPlace } = this.props.weather
 
     let renderedComponent
     noData
       ? (renderedComponent = <div></div>)
       : (renderedComponent = (
           <div>
-            <h1>Right Now</h1>
             <p>{`${Math.round(currently.temperature)}°F`}</p>
+            <p>{displayedPlace}</p>
             <p>{currently.icon}</p>
             <p>{currently.summary}</p>
             <p>High: {`${Math.round(daily.data[0].temperatureMax)}°F`}</p>

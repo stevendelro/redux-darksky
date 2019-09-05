@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   location: '',
+  displayedPlace: '',
   noData: true,
   currently: {},
   daily: {},
@@ -27,6 +28,11 @@ export default (state = INITIAL_STATE, action) => {
         hourly: {
           ...action.weatherData.hourly
         }
+      }
+    case 'DISPLAYED_PLACE':
+      return {
+        ...state,
+        displayedPlace: action.place
       }
     default: {
       return state
