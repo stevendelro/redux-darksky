@@ -13,18 +13,7 @@ class SearchHistory extends React.Component {
         </div>
       ))
       .reverse()
-    return (
-      <div>
-        <div>SEARCH HISTORY</div>
-        <div>
-          {this.props.empty ? (
-            <p>Search history will appear here.</p>
-          ) : (
-            historyList
-          )}
-        </div>
-      </div>
-    )
+    return <div>{this.props.empty ? <div></div> : historyList}</div>
   }
 }
 

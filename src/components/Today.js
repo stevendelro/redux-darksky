@@ -11,8 +11,8 @@ class Today extends React.Component {
       : (renderedComponent = (
           <div>
             <p>{`${Math.round(currently.temperature)}°F`}</p>
-            <p>{displayedPlace}</p>
             <p>{currently.icon}</p>
+            <p>{displayedPlace}</p>
             <p>{currently.summary}</p>
             <p>High: {`${Math.round(daily.data[0].temperatureMax)}°F`}</p>
             <p>Low: {`${Math.round(daily.data[0].temperatureLow)}°F`}</p>

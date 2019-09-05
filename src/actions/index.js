@@ -15,7 +15,6 @@ export const fetchWeather =  location => {
     axios
     .get(mapBoxUrl)
     .then(async geocodeData => {
-      console.log('GEOCODE DATE: ', geocodeData)
       const long = geocodeData.data.features[0].center[0]
       const lat = geocodeData.data.features[0].center[1]
       const place = geocodeData.data.features[0].place_name
