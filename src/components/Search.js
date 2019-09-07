@@ -1,7 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchWeather, locationTextInput, logSearchHistory } from '../actions/index'
+import {
+  fetchWeather,
+  locationTextInput,
+  logSearchHistory
+} from '../actions/index'
 
 class Search extends React.Component {
   inputLocation = event => {
@@ -23,7 +27,11 @@ class Search extends React.Component {
             onChange={this.inputLocation}
             placeholder='search'
           />
-          <button type='submit'>🔍</button>
+          <button type='submit'>
+            <span aria-label='search' role='img'>
+              🔍
+            </span>
+          </button>
         </form>
       </div>
     )
@@ -31,7 +39,10 @@ class Search extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchWeather, locationTextInput, logSearchHistory }, dispatch)
+  return bindActionCreators(
+    { fetchWeather, locationTextInput, logSearchHistory },
+    dispatch
+  )
 }
 
 const mapStateToProps = ({ weather }) => {
