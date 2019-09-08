@@ -6,6 +6,7 @@ import {
   locationTextInput,
   logSearchHistory
 } from '../actions/index'
+import { Form } from 'semantic-ui-react'
 
 class Search extends React.Component {
   inputLocation = event => {
@@ -19,20 +20,16 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onFormSubmit}>
-          <input
-            type='text'
-            value={this.props.weather.location}
-            onChange={this.inputLocation}
-          />
-          <button type='submit'>
-            <span aria-label='search' role='img'>
-              🔍
-            </span>
-          </button>
-        </form>
-      </div>
+      <Form onSubmit={this.onFormSubmit}>
+        <Form.Input
+          transparent
+          icon='search'
+          type='text'
+          placeholder='Search'
+          value={this.props.weather.location}
+          onChange={this.inputLocation}
+        />
+      </Form>
     )
   }
 }
