@@ -5,11 +5,13 @@ import Header from './components/Header'
 // import HourlyList from './components/HourlyList'
 // import DailyList from './components/DailyList'
 import Today from './components/Today'
+import Search from './components/Search'
 
 function App() {
   return (
     <div className='App'>
       <Header />
+      <Search />
       <Today />
       {/* <SearchHistory /> */}
       {/* <HourlyList /> */}

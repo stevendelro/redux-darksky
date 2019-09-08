@@ -5,7 +5,7 @@ pink: #ff6e7f
 light blue: #bfe9ff
 */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  height: 95vh;
+  height: 10vh;
   background-image: linear-gradient(to right bottom, #efefbb7a, #bfe9ff80),
     url('./img/MAIN-BACKGROUND.jpg');
   background-size: cover;
@@ -28,7 +28,7 @@ body {
   text-align: center;
 }
 
-.search-box {
+.header__search-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -60,6 +60,20 @@ body {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 25px;
+  transition: all .2s;
+  backface-visibility: hidden;
+}
+
+.search-bar button:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2)
+}
+
+.search-bar button:active {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2)
 }
 
 .heading-primary {
@@ -103,4 +117,4 @@ body {
   100% {
     opacity: 1;
   }
-}
+} */
