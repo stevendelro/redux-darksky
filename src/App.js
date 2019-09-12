@@ -1,21 +1,18 @@
 import React from 'react'
 import './App.scss'
 import Header from './components/Header'
-// import SearchHistory from './components/SearchHistory'
-// import HourlyList from './components/HourlyList'
-// import DailyList from './components/DailyList'
-import Today from './components/Today'
-import Search from './components/Search'
+import SearchHistory from './components/SearchHistory'
+
+import MainDisplay from './components/MainDisplay'
 
 function App() {
   return (
-    <div className='App'>
+    <div className='container'>
       <Header />
-      {/* <Search /> */}
-      <Today />
-      {/* <SearchHistory /> */}
-      {/* <HourlyList /> */}
-      {/* <DailyList /> */}
+      <div className='content'>
+        <MainDisplay />
+        <SearchHistory />
+      </div>
     </div>
   )
 }

@@ -7,9 +7,9 @@ class Today extends React.Component {
 
     let renderedComponent
     noData
-      ? (renderedComponent = <div></div>)
+      ? (renderedComponent = <div className='today-display'></div>)
       : (renderedComponent = (
-          <div>
+          <div className='today-display'>
             <p>{`${Math.round(currently.temperature)}°F`}</p>
             <p>{currently.icon}</p>
             <p>{displayedPlace}</p>
