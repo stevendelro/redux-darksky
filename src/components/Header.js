@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from './Search'
+import { Container, Menu } from 'semantic-ui-react'
 
 class Header extends React.Component {
   render() {
