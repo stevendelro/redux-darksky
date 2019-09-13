@@ -3,13 +3,6 @@ import { connect } from 'react-redux'
 import Hour from './Hour'
 import uuid from 'uuid'
 
-const styles = {
-  display: 'flex',
-  minWidth: '100%',
-  minHeight: '200px',
-  overflowX: 'auto'
-}
-
 class HourlyList extends React.Component {
   render() {
     const { hourly, noData } = this.props.weather
@@ -18,15 +11,10 @@ class HourlyList extends React.Component {
       renderedComponent = <div></div>
     } else {
       renderedComponent = hourly.data.map(({ time, icon, temperature }) => (
-        <Hour
-          key={uuid()}
-          time={time}
-          icon={icon.replace(/-/g, '_').toUpperCase()}
-          temp={temperature}
-        />
+        <Hour key={uuid()} time={time} icon={icon} temp={temperature} />
       ))
     }
-    return <div style={styles}>{renderedComponent}</div>
+    return <div className='hourly-list'>{renderedComponent}</div>
   }
 }
 
