@@ -3,26 +3,35 @@ import { connect } from 'react-redux'
 import Day from './Day'
 import uuid from 'uuid'
 
+
+const styles = {
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'space-between'
+
+} 
+
 class DailyList extends React.Component {
+
   render() {
     const { daily, noData } = this.props.weather
     let renderedComponent
     if (noData) {
       renderedComponent = <div></div>
     } else {
-      renderedComponent = daily.data.map(
-        ({ time, icon, temperatureHigh, temperatureLow }) => (
+      renderedComponent = daily.data.slice(1).map(
+        ({ time, icon, temperatureHigh, temperatureLow }, index) => (
           <Day
             key={uuid()}
             time={time}
-            icon={icon}
+            icon={icon.replace(/-/g,'_').toUpperCase()}
             tempHi={temperatureHigh}
             tempLo={temperatureLow}
           />
         )
       )
     }
-    return <div className='daily-list'>{renderedComponent}</div>
+    return <div style={styles}>{renderedComponent}</div>
   }
 }
 

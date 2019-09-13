@@ -1,5 +1,7 @@
 import React from 'react'
+import Skycons from 'react-skycons'
 import { connect } from 'react-redux'
+import { Grid } from 'semantic-ui-react'
 
 class Today extends React.Component {
   render() {
@@ -7,16 +9,29 @@ class Today extends React.Component {
 
     let renderedComponent
     noData
-      ? (renderedComponent = <div></div>)
+      ? (renderedComponent = null)
       : (renderedComponent = (
-          <div>
-            <p>{`${Math.round(currently.temperature)}°F`}</p>
-            <p>{currently.icon}</p>
-            <p>{displayedPlace}</p>
-            <p>{currently.summary}</p>
-            <p>High: {`${Math.round(daily.data[0].temperatureMax)}°F`}</p>
-            <p>Low: {`${Math.round(daily.data[0].temperatureLow)}°F`}</p>
-          </div>
+          <Grid textAlign='center' columns={3}>
+            <Grid.Row>
+              <Grid.Column width={4}>
+                <Skycons
+                  icon={currently.icon.replace(/-/g, '_').toUpperCase()}
+                  color='black'
+                  autoplay={true}
+                  style={{ width: '100%', height: 'auto', maxWidth: '150px' }}
+                />
+                <h1>{`${Math.round(currently.temperature)}°F`}</h1>
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <h1>{displayedPlace}</h1>
+                <h4>{daily.summary}</h4>
+              </Grid.Column>
+              <Grid.Column width={4}>
+                <p>High: {`${Math.round(daily.data[0].temperatureMax)}°F`}</p>
+                <p>Low: {`${Math.round(daily.data[0].temperatureLow)}°F`}</p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         ))
 
     return renderedComponent
