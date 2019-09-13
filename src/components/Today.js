@@ -32,6 +32,7 @@ class Today extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
+
         ))
 
     return renderedComponent

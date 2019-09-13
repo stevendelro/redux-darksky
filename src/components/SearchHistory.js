@@ -13,7 +13,11 @@ class SearchHistory extends React.Component {
         </div>
       ))
       .reverse()
-    return <div>{this.props.empty ? <div></div> : historyList}</div>
+    return (
+      <div className='search-history'>
+        {this.props.empty ? <div>search history</div> : historyList}
+      </div>
+    )
   }
 }
 

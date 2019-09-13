@@ -1,0 +1,28 @@
+.container {
+  max-width: 80vw;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+  height: 80vh;
+}
+
+.header {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2)
+}
+
+.content {
+  display: flex;
+}
+
+.main-display {
+  background-color: orangered;
+  flex: 1;
+}
+
+.search-history {
+  background-color: var(--color-grey-dark-3);
+  color: var(--color-grey-light-2);
+  flex: 0 0 20%;
+}
